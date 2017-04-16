@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:facebook="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,8 +11,83 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.rafaelmatucheski.street2androidproject.MainActivity">
 
-    <TextView
+    <ImageView
+        android:src="@mipmap/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:id="@+id/imageView" />
+
+    <Button
+        android:text="Entrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblSenha"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:id="@+id/btnEntrar"
+        android:onClick="telaonibusDisponivel"
+        />
+
+    <Button
+        android:text="Cadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCadastrar"
+        android:layout_below="@+id/btnEntrar"
+        android:layout_centerHorizontal="true"
+        android:onClick="telacriarCadastro"/>
+
+    <com.facebook.login.widget.LoginButton
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:id="@+id/btnLoginFacebook"
+        android:layout_below="@+id/btnCadastrar"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/txtUsuario"
+        android:textSize="16sp"
+        android:layout_alignBaseline="@+id/lblUsuario"
+        android:layout_alignBottom="@+id/lblUsuario"
+        android:layout_alignLeft="@+id/btnCadastrar"
+        android:layout_alignStart="@+id/btnCadastrar" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/txtpassSenha"
+        android:textSize="16sp"
+        android:layout_below="@+id/txtUsuario"
+        android:layout_alignLeft="@+id/txtUsuario"
+        android:layout_alignStart="@+id/txtUsuario" />
+
+    <TextView
+        android:text="Usuário"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblUsuario"
+        android:layout_below="@+id/imageView"
+        android:layout_toLeftOf="@+id/btnLoginFacebook"
+        android:layout_toStartOf="@+id/btnLoginFacebook"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp" />
+
+    <TextView
+        android:text="Senha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblSenha"
+        android:layout_alignBottom="@+id/txtpassSenha"
+        android:layout_alignLeft="@+id/lblUsuario"
+        android:layout_alignStart="@+id/lblUsuario" />
+
+
 </RelativeLayout>
