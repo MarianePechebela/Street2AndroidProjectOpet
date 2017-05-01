@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.support.design.widget.FloatingActionButton;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -38,7 +39,7 @@ public class ListCadastroActivity extends AppCompatActivity {
             public void onClick(View view) {
                 /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
-                Intent cadastroPessoa = new Intent(ListCadastroActivity.this, InsertPessoaActivity.class);
+                Intent cadastroPessoa = new Intent(ListCadastroActivity.this,InsertPessoaActivity.class);
                 startActivity(cadastroPessoa);
             }
         });
