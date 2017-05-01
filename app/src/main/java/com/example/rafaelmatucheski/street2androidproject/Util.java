@@ -45,7 +45,7 @@ public class Util {
         try {
             mainObject.put("nome_cadastro",cadastro.getNome());
             mainObject.put("usuario_cadastro",cadastro.getUsuario());
-            mainObject.put("senha_cadastro",cadastro.getSenha());
+            mainObject.put("password_cadastro",cadastro.getPassword());
 
             return mainObject.toString();
         } catch (JSONException e) {
@@ -65,11 +65,11 @@ public class Util {
                 long id = localObj.getLong("id_cadastro");
                 String nome = localObj.getString("nome_cadastro");
                 String usuario = localObj.getString("usuario_cadastro");
-                String senha = localObj.getString("senha_cadastro");
+                String password = localObj.getString("password_cadastro");
                 novoCadastro.setID(id);
                 novoCadastro.setNome(nome);
                 novoCadastro.setUsuario(usuario);
-                novoCadastro.setSenha(senha);
+                novoCadastro.setPassword(password);
                 cadastro.add(novoCadastro);
             }
 

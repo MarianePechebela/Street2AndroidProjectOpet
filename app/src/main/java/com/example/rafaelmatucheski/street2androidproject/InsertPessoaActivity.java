@@ -25,7 +25,7 @@ public class InsertPessoaActivity extends Activity {
 
     private EditText editNomePessoa;
     private EditText editUsuarioPessoa;
-    private EditText editSenhaUsuario;
+    private EditText editPasswordPessoa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +33,13 @@ public class InsertPessoaActivity extends Activity {
         setContentView(R.layout.activity_insert_pessoa);
         editNomePessoa = (EditText) findViewById(R.id.editNomePessoa);
         editUsuarioPessoa = (EditText) findViewById(R.id.editUsuarioPessoa);
-        editSenhaUsuario = (EditText) findViewById(R.id.editSenhaPessoa);
+        editPasswordPessoa = (EditText) findViewById(R.id.editPasswordPessoa);
     }
     public void cadastrarUsuario(View v){
         Cadastro cadastro = new Cadastro();
         cadastro.setNome(editNomePessoa.getText().toString());
         cadastro.setUsuario(editUsuarioPessoa.getText().toString());
-        cadastro.setSenha(editSenhaUsuario.getText().toString());
+        cadastro.setPassword(editPasswordPessoa.getText().toString());
         new UploadToMyAPI().execute(cadastro);
 
     }
@@ -105,7 +105,7 @@ public class InsertPessoaActivity extends Activity {
                 Intent listaCadastro = null;
                 if(Util.getStatusFromJSON(serverResponseMessage).equals("1")) {
                     Toast.makeText(InsertPessoaActivity.this, "Usuario Cadastrado!", Toast.LENGTH_SHORT).show();
-                    listaCadastro = new Intent(InsertPessoaActivity.this, ListCadastroActivity.class);
+                    listaCadastro = new Intent(InsertPessoaActivity.this, InsertPessoaActivity.class);
                     startActivity(listaCadastro);
                 }else{
                     Toast.makeText(InsertPessoaActivity.this, "Falha ao cadastrar usuário.", Toast.LENGTH_SHORT).show();

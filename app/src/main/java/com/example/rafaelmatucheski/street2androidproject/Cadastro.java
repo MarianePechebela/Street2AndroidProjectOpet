@@ -8,7 +8,7 @@ public class Cadastro {
     private long ID;
     private String nome;
     private String usuario;
-    private String senha;
+    private String password;
 
 
     public Cadastro() {
@@ -30,14 +30,6 @@ public class Cadastro {
         this.nome = nome;
     }
 
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
     public String getUsuario() {
         return usuario;
     }
@@ -46,11 +38,19 @@ public class Cadastro {
         this.usuario = usuario;
     }
 
-    public Cadastro(long ID, String nome, String usuario, String senha)
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Cadastro(long ID, String nome, String usuario, String password)
     {
         this.ID = ID;
         this.nome = nome;
         this.usuario = usuario;
-        this.senha = senha;
+        this.password = password;
     }
 }
