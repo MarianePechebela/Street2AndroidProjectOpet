@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.rafaelmatucheski.street2androidproject">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -9,7 +11,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -19,17 +23,33 @@
             </intent-filter>
         </activity>
 
-
-
-        <activity android:name=".Onibus_Lista"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        android:parentActivityName=".Onibus_Lista">
+        <activity
+            android:name=".Criar_Cadastro"
+            android:label="@string/app_name"
+            android:parentActivityName=".Criar_Cadastro"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Criar_Cadastro" />
+        </activity>
+        <activity
+            android:name=".Onibus_Lista"
+            android:label="@string/app_name"
+            android:parentActivityName=".Onibus_Lista"
+            android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Onibus_Lista" />
-    </activity>
-    </application>
+        </activity>
+        <activity android:name=".InsertPessoaActivity"/>
+        <activity android:name=".ListCadastroActivity"
+            android:label="ListCadastroActivity"
+            android:parentActivityName=".InsertPessoaActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+        android:name="android.support.PARENT_ACTIVITY"
+        android:value=".InsertPessoaActivity"/> </activity>
 
+    </application>
 
 </manifest>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Usuário"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="49dp"
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="54dp"
+            android:id="@+id/lblUsuario" />
+
+        <TextView
+            android:text="Senha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblUsuario"
+            android:layout_alignLeft="@+id/lblUsuario"
+            android:layout_alignStart="@+id/lblUsuario"
+            android:layout_marginTop="27dp"
+            android:id="@+id/lblSenha" />
+
+        <Button
+            android:text="Voltar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="29dp"
+            android:layout_marginEnd="29dp"
+            android:layout_marginBottom="32dp"
+            android:id="@+id/btnVoltar"
+            android:onClick="telaLogin"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/txtpassSenha"
+            android:textSize="16sp"
+            android:layout_below="@+id/txtUsuario"
+            android:layout_alignLeft="@+id/txtpassConfirmacaoSenha"
+            android:layout_alignStart="@+id/txtpassConfirmacaoSenha" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/txtUsuario"
+            android:textSize="16sp"
+            android:layout_alignBaseline="@+id/lblUsuario"
+            android:layout_alignBottom="@+id/lblUsuario"
+            android:layout_alignLeft="@+id/txtpassSenha"
+            android:layout_alignStart="@+id/txtpassSenha" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/txtpassConfirmacaoSenha"
+            android:textSize="16sp"
+            android:layout_below="@+id/txtpassSenha"
+            android:layout_alignRight="@+id/btnVoltar"
+            android:layout_alignEnd="@+id/btnVoltar" />
+
+        <TextView
+            android:text="Confirme a senha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblConfirmacaoSenha"
+            android:layout_alignBottom="@+id/txtpassConfirmacaoSenha"
+            android:layout_alignLeft="@+id/lblSenha"
+            android:layout_alignStart="@+id/lblSenha" />
+
+        <Button
+            android:text="Cadastrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCadastrar"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginStart="33dp"
+            android:layout_below="@+id/txtpassConfirmacaoSenha"
+            android:layout_toRightOf="@+id/lblUsuario"
+            android:layout_toEndOf="@+id/lblUsuario"
+            android:onClick="telaonibusDisponivel"
+            />
+
+        <TextView
+            android:text="Criar Cadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblTitulo_criarCadastro"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="normal|bold"
+            android:layout_above="@+id/txtUsuario"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
+</LinearLayout>

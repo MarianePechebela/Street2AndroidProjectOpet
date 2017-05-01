@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.rafaelmatucheski.street2androidproject.MainActivity">
+    tools:context="com.example.rafaelmatucheski.">
 
     <ImageView
         android:src="@mipmap/logo"
@@ -25,7 +25,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:id="@+id/btnEntrar"
-        android:onClick="telaonibusDisponivel"
+        android:onClick="telaOnibusLista"
         />
 
     <Button
@@ -35,7 +35,7 @@
         android:id="@+id/btnCadastrar"
         android:layout_below="@+id/btnEntrar"
         android:layout_centerHorizontal="true"
-        android:onClick="telacriarCadastro"/>
+        android:onClick="telaCadastro"/>
 
     <com.facebook.login.widget.LoginButton
         android:text="Button"

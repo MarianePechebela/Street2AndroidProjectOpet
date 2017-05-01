@@ -13,6 +13,8 @@ import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
+import static com.example.rafaelmatucheski.street2androidproject.R.id.btnCadastrar;
+
 
 public class MainActivity extends Activity {
 
@@ -26,6 +28,7 @@ public class MainActivity extends Activity {
 
         loginButton = (LoginButton) findViewById(R.id.btnLoginFacebook);
         callbackManager = CallbackManager.Factory.create();
+
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
 
 
@@ -53,6 +56,18 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
+
+    public void telaCadastro(View v)
+    {
+        Intent tela = new Intent(this, Criar_Cadastro.class );
+        startActivity(tela);
+    }
+
+    public void telaOnibusLista(View v)
+    {
+        Intent tela = new Intent(this, Onibus_Lista.class );
+        startActivity(tela);
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
