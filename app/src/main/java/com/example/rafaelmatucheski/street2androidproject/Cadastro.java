@@ -5,17 +5,16 @@ package com.example.rafaelmatucheski.street2androidproject;
  */
 
 public class Cadastro {
-    public Long ID;
-    public String nome;
-    public String usuario;
-    public String senha;
+    private long ID;
+    private String nome;
+    private String usuario;
+    private String senha;
 
 
     public Cadastro() {
-
     }
 
-    public Long getID() {
+    public long getID() {
         return ID;
     }
 
@@ -47,10 +46,9 @@ public class Cadastro {
         this.usuario = usuario;
     }
 
-    public Cadastro(Long ID, String nome, String usuario, String senha)
+    public Cadastro(long ID, String nome, String usuario, String senha)
     {
         this.ID = ID;
-
         this.nome = nome;
         this.usuario = usuario;
         this.senha = senha;

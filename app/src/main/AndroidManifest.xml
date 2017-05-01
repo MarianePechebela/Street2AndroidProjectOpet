@@ -42,14 +42,15 @@
                 android:value=".Onibus_Lista" />
         </activity>
         <activity android:name=".InsertPessoaActivity"/>
-        <activity android:name=".ListCadastroActivity"
+        <activity
+            android:name=".ListCadastroActivity"
             android:label="ListCadastroActivity"
             android:parentActivityName=".InsertPessoaActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
         android:name="android.support.PARENT_ACTIVITY"
-        android:value=".InsertPessoaActivity"/> </activity>
-
+        android:value=".InsertPessoaActivity"/>
+        </activity>
     </application>
 
 </manifest>

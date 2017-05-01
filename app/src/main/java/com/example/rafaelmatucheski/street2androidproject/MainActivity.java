@@ -2,7 +2,6 @@ package com.example.rafaelmatucheski.street2androidproject;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -12,8 +11,6 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
-
-import static com.example.rafaelmatucheski.street2androidproject.R.id.btnCadastrar;
 
 
 public class MainActivity extends Activity {
@@ -55,6 +52,22 @@ public class MainActivity extends Activity {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
+
+    public void selectMainOpetion(View view){
+        Intent intent = null;
+        switch (view.getId()){
+            case R.id.btnInserir:
+                intent = new Intent(this,InsertPessoaActivity.class);
+                break;
+           // case R.id.btnListar:
+               // intent = new Intent(this,ListCadastroActivity.class);
+               // break;
+        }
+        if(intent != null){
+            startActivity(intent);
+        }
+    }
+
 
 
     public void telaCadastro(View v)

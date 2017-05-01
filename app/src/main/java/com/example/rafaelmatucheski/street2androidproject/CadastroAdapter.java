@@ -38,7 +38,7 @@ public class CadastroAdapter extends ArrayAdapter<Cadastro> {
             TextView textID = (TextView) localView.findViewById(R.id.textID);
             TextView textNome = (TextView) localView.findViewById(R.id.textNome);
             TextView textUsuario = (TextView) localView.findViewById(R.id.textUsuario);
-            TextView textSenha = (TextView) localView.findViewById(R.id.textID);
+            TextView textSenha = (TextView) localView.findViewById(R.id.textSenha);
 
             if(textID != null){
                 textID.setText(String.valueOf(cadastro.getID()));

@@ -105,7 +105,7 @@ public class ListCadastroActivity extends AppCompatActivity {
             super.onPostExecute(s);
             if(isConnected)
             {
-                List<Cadastro> cadastros = Util.convertJSONtoClube(s);
+                List<Cadastro> cadastros = Util.convertJSONtoCadastro(s);
                 if(cadastros != null){
                     ArrayAdapter<Cadastro> pessoaArrayAdapter = new CadastroAdapter(ListCadastroActivity.this,R.layout.cadastro_item,cadastros);
                     ListView listaCadastros = (ListView) findViewById(R.id.listCadastros);

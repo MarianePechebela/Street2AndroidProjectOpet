@@ -43,9 +43,9 @@ public class Util {
     public static String convertCadastrotoJSON(Cadastro cadastro) {
         JSONObject mainObject = new JSONObject();
         try {
-            mainObject.put("nome_cadastro", cadastro.getNome());
-            mainObject.put("usuario_cadastro", cadastro.getUsuario());
-            mainObject.put("senha_cadastro", cadastro.getSenha());
+            mainObject.put("nome_cadastro",cadastro.getNome());
+            mainObject.put("usuario_cadastro",cadastro.getUsuario());
+            mainObject.put("senha_cadastro",cadastro.getSenha());
 
             return mainObject.toString();
         } catch (JSONException e) {
