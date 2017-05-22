@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.facebook.CallbackManager;
@@ -15,16 +16,22 @@ import com.facebook.login.widget.LoginButton;
 
 public class MainActivity extends Activity {
 
+    EditText UsernameEt, PasswordEt;
+
     private LoginButton loginButton;
     private CallbackManager callbackManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         loginButton = (LoginButton) findViewById(R.id.btnLoginFacebook);
         callbackManager = CallbackManager.Factory.create();
+
+        UsernameEt = (EditText)findViewById(R.id.txtUsuario);
+        PasswordEt = (EditText)findViewById(R.id.txtpassSenha);
 
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
 
@@ -44,6 +51,15 @@ public class MainActivity extends Activity {
                 Toast.makeText(getApplicationContext(), R.string.error_login, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void OnLogin(View view){
+        String usuario_cadastro = UsernameEt.getText().toString();
+        String password_cadastro = PasswordEt.getText().toString();
+        String type = "Login";
+
+        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+        backgroundWorker.execute(type, usuario_cadastro, password_cadastro);
     }
 
     //Para que quando clicar em voltar não vá para login e sim saia da aplicação.
@@ -67,9 +83,6 @@ public class MainActivity extends Activity {
             startActivity(intent);
         }
     }
-
-
-
     public void telaCadastro(View v)
     {
         Intent tela = new Intent(this, Criar_Cadastro.class );
