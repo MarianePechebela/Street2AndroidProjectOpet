@@ -3,12 +3,12 @@
     package="com.example.rafaelmatucheski.street2androidproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Street 2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
@@ -22,34 +22,51 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".Criar_Cadastro"
-            android:label="@string/app_name"
-            android:parentActivityName=".Criar_Cadastro"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Criar_Cadastro" />
-        </activity>
-        <activity
-            android:name=".Onibus_Lista"
-            android:label="@string/app_name"
-            android:parentActivityName=".Onibus_Lista"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Onibus_Lista" />
-        </activity>
-        <activity android:name=".InsertPessoaActivity"/>
+        <activity android:name=".InsertPessoaActivity" />
         <activity
             android:name=".ListCadastroActivity"
-            android:label="ListCadastroActivity"
+            android:label="Street 2"
             android:parentActivityName=".InsertPessoaActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
-        android:name="android.support.PARENT_ACTIVITY"
-        android:value=".InsertPessoaActivity"/>
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".InsertPessoaActivity" />
+        </activity>
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".InsertOnibusActivity" />
+        <activity
+            android:name=".ListOnibusActivity"
+            android:parentActivityName=".MenuActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".InsertOnibusActivity" />
+        </activity>
+        <activity android:name=".MenuuActivity" />
+        <activity
+            android:name=".ListOnibussActivity"
+            android:parentActivityName=".MenuuActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".InsertOnibusActivity" />
+        </activity>
+        <activity android:name=".InsertOnibussActivity" />
+        <activity android:name=".InsertRotasActivity" />
+        <activity
+            android:name=".ListRotasActivity"
+            android:parentActivityName=".MenuuActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".InsertRotasActivity" />
+        </activity>
+        <activity android:name=".ListRotassActivity"
+            android:parentActivityName=".MenuActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".InsertRotasActivity" />
         </activity>
     </application>
 

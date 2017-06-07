@@ -9,95 +9,120 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.rafaelmatucheski.">
+    tools:context="com.example.rafaelmatucheski.street2androidproject.MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="0.04"
+        android:fontFamily="sans-serif"
+        android:text="     All Rights Reserved Street2 2017"
+        android:textSize="12dp" />
 
     <ImageView
         android:src="@mipmap/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView" />
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
-        android:text="Entrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lblSenha"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
         android:id="@+id/btnEntrar"
-        android:onClick="OnLogin"
-        />
-
-    <Button
-        android:text="Cadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnCadastrar"
-        android:layout_below="@+id/btnEntrar"
         android:layout_centerHorizontal="true"
-        android:onClick="telaCadastro"/>
+        android:layout_centerVertical="true"
+        android:background="@drawable/com_facebook_tooltip_black_background"
+        android:fontFamily="sans-serif"
+        android:onClick="OnLogin"
+        android:text="Entrar"
+        android:textAllCaps="false"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="14dp"
+        android:typeface="normal" />
+
+
+    <TextView
+        android:id="@+id/btnInserir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="selectMainOpetion"
+        android:text="Ainda não tem cadastro? Criar conta"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_marginTop="39dp"
+        android:layout_below="@+id/btnLoginFacebook"
+        android:layout_centerHorizontal="true" />
 
     <com.facebook.login.widget.LoginButton
-        android:text="Button"
+        android:id="@+id/btnLoginFacebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:id="@+id/btnLoginFacebook"
-        android:layout_below="@+id/btnCadastrar"
+        android:layout_marginTop="46dp"
+        android:text="Button"
+        android:layout_below="@+id/btnEntrar"
         android:layout_centerHorizontal="true" />
 
     <EditText
+        android:id="@+id/txtUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/txtUsuario"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/colorPrimary"
+        android:textColorLink="@color/colorPrimary"
         android:textSize="16sp"
         android:layout_alignBaseline="@+id/lblUsuario"
         android:layout_alignBottom="@+id/lblUsuario"
-        android:layout_alignLeft="@+id/btnCadastrar"
-        android:layout_alignStart="@+id/btnCadastrar" />
+        android:layout_alignEnd="@+id/btnInserir" />
 
     <EditText
+        android:id="@+id/txtpassSenha"
+        style="@style/AlertDialog.AppCompat.Light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
+        android:layout_above="@+id/btnEntrar"
+        android:layout_alignStart="@+id/txtUsuario"
         android:ems="10"
-        android:id="@+id/txtpassSenha"
-        android:textSize="16sp"
-        android:layout_below="@+id/txtUsuario"
-        android:layout_alignLeft="@+id/txtUsuario"
-        android:layout_alignStart="@+id/txtUsuario" />
+        android:inputType="textPassword"
+        android:textColorLink="@color/colorPrimaryDark"
+        android:textSize="16sp" />
 
     <TextView
         android:text="Usuário"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/lblUsuario"
-        android:layout_below="@+id/imageView"
-        android:layout_toLeftOf="@+id/btnLoginFacebook"
-        android:layout_toStartOf="@+id/btnLoginFacebook"
         android:layout_marginRight="14dp"
-        android:layout_marginEnd="14dp" />
+        android:layout_above="@+id/txtpassSenha"
+        android:layout_alignStart="@+id/lblSenha"
+        android:layout_marginBottom="43dp" />
 
     <TextView
         android:text="Senha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/lblSenha"
+        android:layout_alignBaseline="@+id/txtpassSenha"
         android:layout_alignBottom="@+id/txtpassSenha"
-        android:layout_alignLeft="@+id/lblUsuario"
-        android:layout_alignStart="@+id/lblUsuario" />
+        android:layout_toStartOf="@+id/btnLoginFacebook" />
+
 
     <Button
-        android:onClick="selectMainOpetion"
-        android:id="@+id/btnInserir"
-        android:layout_width="match_parent"
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cadastrar Usuario 2.0"
-        android:layout_marginTop="38dp"
-        android:layout_below="@+id/btnLoginFacebook"
-        android:layout_centerHorizontal="true" />
-
+        android:background="@drawable/com_facebook_tooltip_black_background"
+        android:text="Compartilhe"
+        android:textAllCaps="false"
+        android:textColor="@color/cardview_light_background"
+        android:layout_below="@+id/btnInserir"
+        android:layout_alignStart="@+id/txtpassSenha"
+        android:layout_marginTop="22dp" />
 
 </RelativeLayout>

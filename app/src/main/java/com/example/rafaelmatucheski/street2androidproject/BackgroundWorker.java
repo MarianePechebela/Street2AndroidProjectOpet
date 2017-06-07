@@ -2,7 +2,9 @@ package com.example.rafaelmatucheski.street2androidproject;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -15,6 +17,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+
+
+
 
 /**
  * Created by Rafael Matucheski on 21/05/2017.
@@ -73,17 +78,30 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
     @Override
     protected void onPreExecute(){
         alertDialog = new AlertDialog.Builder(context).create();
-        alertDialog.setTitle("Status de Login");
+        alertDialog.setTitle("Status:");
     }
 
     @Override
-    protected void onPostExecute(String result){
+    protected void onPostExecute(String result) {
         alertDialog.setMessage(result);
         alertDialog.show();
+
+        if(result.contains("Bem vindo")){
+            Intent intent = new Intent(context, MenuActivity.class);
+            context.startActivity(intent);
+        }
+        else{
+            alertDialog = new AlertDialog.Builder(context).create();
+            alertDialog.setTitle("Status:");
+        }
+
     }
 
     @Override
     protected void onProgressUpdate(Void... values){
         super.onProgressUpdate(values);
     }
-}
+
+
+    }
+

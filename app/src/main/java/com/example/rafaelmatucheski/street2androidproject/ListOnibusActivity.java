@@ -6,30 +6,32 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
-import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-import android.support.design.widget.FloatingActionButton;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Rafael Matucheski on 30/04/2017.
- */
+public class ListOnibusActivity extends AppCompatActivity {
 
-public class ListCadastroActivity extends AppCompatActivity {
-
+    private List<Onibus> onibuses;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_insert_pessoa);
+        setContentView(R.layout.activity_list_onibus);
+        onibuses = new ArrayList<Onibus>();
+        onibuses.add(new Onibus("Marca: ", "Modelo: ", "Ano: ", "Chassi: "));
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -39,46 +41,51 @@ public class ListCadastroActivity extends AppCompatActivity {
             public void onClick(View view) {
                 /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
-                Intent cadastroPessoa = new Intent(ListCadastroActivity.this,InsertPessoaActivity.class);
-                startActivity(cadastroPessoa);
+                onibuses = new ArrayList<Onibus>();
+                onibuses.add(new Onibus("Marca: ", "Modelo: ", "Ano: ", "Chassi: "));
+                Intent cadastroOnibus = new Intent(ListOnibusActivity.this, InsertOnibusActivity.class);
+                startActivity(cadastroOnibus);
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        loadPessoa();
-
+        loadOnibus();
     }
-    public void loadPessoa(){
-        new DownloadFromMyAPI().execute();
+
+    public void loadOnibus() {
+        if (isConnected())
+            new DownloadFromMyAPI().execute();
+        else
+            Toast.makeText(this, "Verifique a sua conexão com a internet ...", Toast.LENGTH_SHORT).show();
+    }
+
+    private boolean isConnected() {
+        ConnectivityManager cm =
+                (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        return activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
     }
 
     private class DownloadFromMyAPI extends AsyncTask<Void, Void, String> {
-
-        boolean isConnected = false;
         ProgressDialog progress;
 
         @Override
         protected void onPreExecute() {
-            ConnectivityManager cm =
-                    (ConnectivityManager)ListCadastroActivity.this.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-            NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-            isConnected = activeNetwork != null &&
-                    activeNetwork.isConnectedOrConnecting();
-            if(isConnected) {
-                progress = new ProgressDialog(ListCadastroActivity.this);
-                progress.setMessage("Aguarde o Download dos Dados");
-                progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-                progress.setProgress(0);
-                progress.show();
-            }
-            else{
-                Toast.makeText(ListCadastroActivity.this, "Verifique a conexão com a internet...", Toast.LENGTH_SHORT).show();
-            }
+
+            progress = new ProgressDialog(ListOnibusActivity.this);
+            progress.setMessage("Fazendo download dos dados ...");
+            progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            progress.setProgress(0);
+            progress.show();
+
         }
+
         @Override
         protected String doInBackground(Void... params) {
             HttpURLConnection urlConnection = null;
             try {
-                URL url = new URL("http://street2.pe.hu/selectAll.php");
+                URL url = new URL("http://street2.pe.hu/selectOnibus.php");
                 urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setReadTimeout(10000);
                 urlConnection.setConnectTimeout(15000);
@@ -94,27 +101,23 @@ public class ListCadastroActivity extends AppCompatActivity {
             } catch (Exception e) {
                 Log.e("Error", "Error ", e);
                 return null;
-            } finally{
+            } finally {
                 if (urlConnection != null) {
                     urlConnection.disconnect();
                 }
             }
         }
+
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            if(isConnected)
-            {
-                List<Cadastro> cadastros = Util.convertJSONtoCadastro(s);
-                if(cadastros != null){
-                    ArrayAdapter<Cadastro> pessoaArrayAdapter = new CadastroAdapter(ListCadastroActivity.this,R.layout.cadastro_item,cadastros);
-                    //ListView listaCadastros = (ListView) findViewById(R.id.listCadastros);
-                    //listaCadastros.setAdapter(pessoaArrayAdapter);
-                }
-                progress.dismiss();
+            List<Onibus> onibuscad = Util.convertJSONtoCadastroOnibus(s);
+            if (onibuscad != null) {
+                ArrayAdapter<Onibus> onibusAdapter = new OnibusAdapter(ListOnibusActivity.this, R.layout.onibus_item, onibuscad);
+                ListView listaOnibus = (ListView) findViewById(R.id.listaOnibus);
+                listaOnibus.setAdapter(onibusAdapter);
             }
-
+            progress.dismiss();
         }
     }
-
 }

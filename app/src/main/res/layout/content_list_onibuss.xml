@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_list_clube"
+    android:id="@+id/content_list_onibuss"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -11,15 +11,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ListCadastroActivity"
-    tools:showIn="@layout/activity_list_pessoa">
+    tools:context=".ListOnibussActivity"
+    tools:showIn="@layout/activity_list_onibuss"
+    android:weightSum="1">
+
 
     <ListView
-        android:id="@+id/listCadastros"
+        android:id="@+id/listaOnibuss"
+        style="@style/Widget.AppCompat.ListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:headerDividersEnabled="false">
     </ListView>
 
 </LinearLayout>
-

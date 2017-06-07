@@ -9,9 +9,19 @@ public class Cadastro {
     private String nome;
     private String usuario;
     private String password;
-
+    private String email;
 
     public Cadastro() {
+    }
+
+    public Cadastro(String nome, String usuario, String password, String email)
+    {
+        this.ID = ID;
+        this.nome = nome;
+        this.usuario = usuario;
+        this.password = password;
+        this.email = email;
+
     }
 
     public long getID() {
@@ -46,11 +56,13 @@ public class Cadastro {
         this.password = password;
     }
 
-    public Cadastro(long ID, String nome, String usuario, String password)
-    {
-        this.ID = ID;
-        this.nome = nome;
-        this.usuario = usuario;
-        this.password = password;
+    public String getEmail() {
+        return email;
     }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
 }

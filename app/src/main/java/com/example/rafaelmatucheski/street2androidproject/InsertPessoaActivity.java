@@ -27,6 +27,7 @@ public class InsertPessoaActivity extends Activity {
     private EditText editUsuarioPessoa;
     private EditText editPasswordPessoa;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +38,11 @@ public class InsertPessoaActivity extends Activity {
     }
     public void cadastrarUsuario(View v){
         Cadastro cadastro = new Cadastro();
+
         cadastro.setNome(editNomePessoa.getText().toString());
         cadastro.setUsuario(editUsuarioPessoa.getText().toString());
         cadastro.setPassword(editPasswordPessoa.getText().toString());
+
         new UploadToMyAPI().execute(cadastro);
 
     }
@@ -96,22 +99,31 @@ public class InsertPessoaActivity extends Activity {
                 }
             }
         }
-
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             if(isConnected)
             {
-                Intent listaCadastro = null;
+                Intent listaCadastroActivity = null;
                 if(Util.getStatusFromJSON(serverResponseMessage).equals("1")) {
-                    Toast.makeText(InsertPessoaActivity.this, "Usuario Cadastrado!", Toast.LENGTH_SHORT).show();
-                    listaCadastro = new Intent(InsertPessoaActivity.this, InsertPessoaActivity.class);
-                    startActivity(listaCadastro);
+                    Toast.makeText(InsertPessoaActivity.this, "Usuário cadastrado com sucesso !!", Toast.LENGTH_SHORT).show();
+                    listaCadastroActivity = new Intent(InsertPessoaActivity.this, MainActivity.class);
+                    startActivity(listaCadastroActivity);
                 }else{
                     Toast.makeText(InsertPessoaActivity.this, "Falha ao cadastrar usuário.", Toast.LENGTH_SHORT).show();
                 }
             }
-
+        }
+    }
+    public void selectMainOpetion(View view) {
+        Intent intent = null;
+        switch (view.getId()) {
+            case R.id.btnVoltar:
+                intent = new Intent(this, MainActivity.class);
+                break;
+        }
+        if (intent != null) {
+            startActivity(intent);
         }
     }
 }

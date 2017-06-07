@@ -3,4 +3,7 @@
     <string name="facebook_app_id">1586266771413366</string>
     <string name="cancel_login">Login Cancelado</string>
     <string name="error_login">Ocorreu um erro ao ingressar</string>
+    <string name="title_activity_menug">MenugActivity</string>
+    <string name="title_activity_insert_onibus">Onibus Cadastro</string>
+    <string name="title_activity_onibus_cadastro">activity_onibus_cadastro</string>
 </resources>

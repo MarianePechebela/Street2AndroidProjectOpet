@@ -39,9 +39,11 @@ public class CadastroAdapter extends ArrayAdapter<Cadastro> {
             TextView textNome = (TextView) localView.findViewById(R.id.textNome);
             TextView textUsuario = (TextView) localView.findViewById(R.id.textUsuario);
             TextView textPassword = (TextView) localView.findViewById(R.id.textPassword);
+            TextView textEmail = (TextView) localView.findViewById(R.id.textEmail);
 
-            if(textID != null){
+           if(textID != null){
                 textID.setText(String.valueOf(cadastro.getID()));
+
             }
             if(textNome != null){
                 textNome.setText(cadastro.getNome());
@@ -53,6 +55,11 @@ public class CadastroAdapter extends ArrayAdapter<Cadastro> {
             if(textPassword != null){
                 textPassword.setText(cadastro.getPassword());
             }
+
+            if(textEmail != null){
+                textPassword.setText(cadastro.getEmail());
+            }
+
         }
         return localView;
     }
