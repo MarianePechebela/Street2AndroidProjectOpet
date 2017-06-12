@@ -34,6 +34,7 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
     }
 
 
+    //Login com resultado saindo do PHP convertendo em MSG
     @Override
     protected String doInBackground(String... params) {
         String type = params[0];

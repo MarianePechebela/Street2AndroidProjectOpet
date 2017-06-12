@@ -13,6 +13,7 @@ import java.util.List;
  * Created by Rafael Matucheski on 30/04/2017.
  */
 
+
 public class CadastroAdapter extends ArrayAdapter<Cadastro> {
     private List<Cadastro> cadastros;
     private int layout;

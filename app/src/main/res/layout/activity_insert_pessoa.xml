@@ -54,18 +54,6 @@
         android:textColorLink="@color/colorPrimary"
         android:textSize="18dp" />
 
-    <EditText
-        android:id="@+id/editEmailPessoa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginTop="8dp"
-        android:hint="Email"
-        android:inputType="textEmailAddress|textWebEmailAddress"
-        android:textColorLink="@color/colorPrimary"
-        android:textSize="18dp" />
-
     <Button
         android:id="@+id/btnCadastrarUsuario"
         android:layout_width="wrap_content"

@@ -4,6 +4,8 @@ package com.example.rafaelmatucheski.street2androidproject;
  * Created by Rafael Matucheski on 30/04/2017.
  */
 
+
+//Classe Cadastro
 public class Cadastro {
     private long ID;
     private String nome;
@@ -11,6 +13,7 @@ public class Cadastro {
     private String password;
     private String email;
 
+    //SUPER
     public Cadastro() {
     }
 
@@ -24,6 +27,7 @@ public class Cadastro {
 
     }
 
+    //Getter and Setters
     public long getID() {
         return ID;
     }

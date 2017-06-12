@@ -27,6 +27,10 @@
             android:id="@+id/msgMenu"
             android:layout_width="255dp"
             android:layout_height="52dp"
+            android:layout_alignEnd="@+id/btnOnibus"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="31dp"
+            android:layout_marginTop="38dp"
             android:fontFamily="sans-serif"
             android:text="Menu Principal"
             android:textAllCaps="false"
@@ -34,16 +38,14 @@
             android:textSize="36dp"
             android:typeface="normal"
             tools:layout_editor_absoluteX="57dp"
-            tools:layout_editor_absoluteY="43dp"
-            android:layout_marginTop="38dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignEnd="@+id/btnOnibus"
-            android:layout_marginEnd="31dp" />
+            tools:layout_editor_absoluteY="43dp" />
 
         <Button
             android:id="@+id/btnOnibus"
             android:layout_width="151dp"
             android:layout_height="62dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
             android:layout_gravity="center"
             android:layout_marginEnd="14dp"
             android:background="@drawable/com_facebook_tooltip_black_background"
@@ -53,15 +55,16 @@
             android:textColor="@color/cardview_light_background"
             android:textSize="16dp"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="131dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true" />
+            tools:layout_editor_absoluteY="131dp" />
 
         <Button
             android:id="@+id/btnRotas"
             android:layout_width="151dp"
             android:layout_height="62dp"
+            android:layout_alignTop="@+id/btnOnibus"
             android:layout_gravity="center"
+            android:layout_marginEnd="24dp"
+            android:layout_toStartOf="@+id/btnOnibus"
             android:background="@drawable/com_facebook_tooltip_black_background"
             android:onClick="selectMainOpetion"
             android:text="Lista de Rotas"
@@ -69,10 +72,7 @@
             android:textColor="@color/cardview_light_background"
             android:textSize="16dp"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="218dp"
-            android:layout_alignTop="@+id/btnOnibus"
-            android:layout_toStartOf="@+id/btnOnibus"
-            android:layout_marginEnd="24dp" />
+            tools:layout_editor_absoluteY="218dp" />
 
         <Button
             android:id="@+id/btnLogout"
